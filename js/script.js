@@ -66,3 +66,22 @@ for (let i = 0; i < studentsList.length; i++) {
     }
 
 }
+console.log(studentsList)
+
+// 5. Dare la possibilità all’ utente, attraverso 3 prompt(), di aggiungere all’ array creato in precedenza, un nuovo oggetto studente inserendo nell’ ordine:
+// nome, cognome e età.
+const inputNewStudentName = prompt('inserisci il nome');
+const inputNewStudentSurname = prompt('inserisci il tuo cognome');
+const inputNewStudentage = prompt('Quanti anni hai?');
+
+
+
+const newStudentName = inputNewStudentName;
+const newStudentSurname = inputNewStudentSurname;
+const newStudentAge = inputNewStudentage;
+
+
+const newStudent = { name: newStudentName, surname: newStudentSurname, age: inputNewStudentage }
+studentsList.push(newStudent);
+
+console.log(studentsList);
