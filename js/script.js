@@ -28,7 +28,7 @@ const student = {
 
 
 
-// stampo in console le proprietà dello studente
+// 2. Stampare a schermo attraverso un ciclo for-in tutte le proprietà dell'oggetto.
 for (let key in student) {
     console.log(key);
     printDatas.innerText += student[key];
