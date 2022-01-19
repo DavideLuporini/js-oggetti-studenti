@@ -29,10 +29,10 @@ const student = {
 
 
 // 2. Stampare a schermo attraverso un ciclo for-in tutte le proprietà dell'oggetto.
-for (let key in student) {
-    console.log(key);
-    printDatas.innerText += student[key];
-}
+// for (let key in student) {
+//     console.log(key);
+//     printDatas.innerText += student[key];
+// }
 
 // 3. Creare un array di oggetti di studenti (ossìa oggetti con le proprietà sopra descritte).
 const studentsList = [{
@@ -53,3 +53,16 @@ const studentsList = [{
         age: 25,
     },
 ]
+
+// giro nell'array
+for (let i = 0; i < studentsList.length; i++) {
+    const currentStudent = studentsList[i];
+    // console.log(currentStudent)
+    // console.log('nome: ', currentStudent.name);
+    // console.log('cognome: ', currentStudent.surname);
+    // console.log('età: ', currentStudent.age);
+    for (let key in currentStudent) {
+        console.log(`${key}: ${currentStudent[key]}`)
+    }
+
+}
