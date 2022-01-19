@@ -70,18 +70,70 @@ console.log(studentsList)
 
 // 5. Dare la possibilità all’ utente, attraverso 3 prompt(), di aggiungere all’ array creato in precedenza, un nuovo oggetto studente inserendo nell’ ordine:
 // nome, cognome e età.
-const inputNewStudentName = prompt('inserisci il nome');
-const inputNewStudentSurname = prompt('inserisci il tuo cognome');
-const inputNewStudentage = prompt('Quanti anni hai?');
+// const inputNewStudentName = prompt('inserisci il nome');
+// const inputNewStudentSurname = prompt('inserisci il tuo cognome');
+// const inputNewStudentage = prompt('Quanti anni hai?');
 
 
 
-const newStudentName = inputNewStudentName;
-const newStudentSurname = inputNewStudentSurname;
-const newStudentAge = inputNewStudentage;
+// const newStudentName = inputNewStudentName;
+// const newStudentSurname = inputNewStudentSurname;
+// const newStudentAge = inputNewStudentage;
 
 
-const newStudent = { name: newStudentName, surname: newStudentSurname, age: inputNewStudentage }
-studentsList.push(newStudent);
+// const newStudent = { name: newStudentName, surname: newStudentSurname, age: inputNewStudentage }
+// studentsList.push(newStudent);
 
-console.log(studentsList);
+// console.log(studentsList);
+
+// bonus
+
+// Prendo gli elemnti dal dom
+const printResult = document.getElementById('printresult');
+const inputNewStudentName = document.getElementById('name');
+const inputNewStudentSurname = document.getElementById('surname');
+const inputNewStudentAge = document.getElementById('age');
+const button = document.getElementById('button');
+
+
+
+// Creo nuovo oggetto da pushare in seguito
+
+const newStudent = {
+    name: 'name',
+    surname: 'surname',
+    age: 'age',
+};
+button.addEventListener('click', function() {
+    const newName = inputNewStudentName.value;
+    const newLastname = inputNewStudentSurname.value;
+    const newAge = inputNewStudentAge.value;
+
+    console.log(newName)
+    console.log(newLastname)
+    console.log(newAge)
+
+    newStudent.name = newName;
+    newStudent.surname = newLastname;
+    newStudent.age = newAge;
+    console.log(studentsList);
+    studentsList.push(newStudent);
+    console.table(newStudent);
+
+
+    for (let i = 0; i < studentsList.length; i++) {
+        //* console.table(studentsList[i]);
+        // Prendo ogni valore nell'array 
+        for (let key in studentsList[i]) {
+            if (!(key === 'eta')) {
+                // Ad ogni ciclo viene creato un p
+                let datas = document.createElement('p');
+                // Stampa il valore della key nell array (i)
+                let data = studentsList[i][key];
+
+                datas.innerText = key + ': ' + data;
+                printResult.appendChild(datas);
+            }
+        }
+    }
+})
