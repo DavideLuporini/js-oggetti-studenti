@@ -33,3 +33,23 @@ for (let key in student) {
     console.log(key);
     printDatas.innerText += student[key];
 }
+
+// 3. Creare un array di oggetti di studenti (ossìa oggetti con le proprietà sopra descritte).
+const studentsList = [{
+        name: 'Giovanni',
+        surname: 'Mucciaccia',
+        age: 58,
+    },
+
+    {
+        name: 'Giorgio',
+        surname: 'vanni',
+        age: 61,
+    },
+
+    {
+        name: 'Davide',
+        surname: 'Luporini',
+        age: 25,
+    },
+]
