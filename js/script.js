@@ -12,3 +12,24 @@ console.log('js ok')
 // Consigli del giorno
 // - Scriviamo sempre prima in italiano i passaggi che vogliamo fare
 // - Scriviamo sempre solo un pezzetto di codice alla volta e verifichiamo (il console.log è nostro amico), se funziona allora andiamo avanti.
+
+// prelevo elemento dove stampare
+let printDatas = document.getElementById('datas')
+    // 1. Creare un oggetto che descriva uno studente, con le seguenti proprietà: nome, cognome e età.
+const student = {
+    nome: 'Davide ',
+    cognome: 'Luporini ',
+    età: '25 ',
+}
+
+// console.log(students.nome)
+// console.log(students.cognome)
+// console.log(students.età)
+
+
+
+// stampo in console le proprietà dello studente
+for (let key in student) {
+    console.log(key);
+    printDatas.innerText += student[key];
+}
